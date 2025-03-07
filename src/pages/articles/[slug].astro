@@ -1,0 +1,28 @@
+---
+import BaseLayout from "~/layouts/base.astro";
+import ContentLayout from "~/layouts/content.astro";
+import ArticleHeader from "./_components/article-header.astro";
+
+import { articlesHandler } from "~/lib/handlers/articles";
+
+export const getStaticPaths = async () => {
+  const articles = articlesHandler.allArticles();
+
+  return articles.map((article) => ({
+    params: { slug: article.data.slug },
+    props: { article },
+  }));
+};
+const { article } = Astro.props;
+---
+
+<BaseLayout entry={article}>
+  <ArticleHeader
+    article={article}
+  />
+  <ContentLayout>
+    <div set:html={article.data.summary.replace("\n", "<br>")}></div>
+    <hr/>
+    <div set:html={article.data.content.replace("\n", "<br>")}></div>
+  </ContentLayout>
+</BaseLayout>

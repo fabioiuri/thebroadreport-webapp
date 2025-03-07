@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import Divider from "~/components/bases/divider.astro";
+import { categoriesHandler } from "~/lib/handlers/categories";
+import { getDateDistance } from "~/lib/utils/date";
+import Time04 from "~/assets/svgs/time-04.astro";
+
+type Props = {
+  article: CollectionEntry<"articles">;
+};
+
+const { article } = Astro.props;
+
+const category = categoriesHandler.oneCategory(article.data.category.id);
+---
+
+<article class="group">
+  <a
+    href={`/articles/${article.data.slug}`}
+    class="flex flex-col-reverse md:flex-col gap-4"
+  >
+    <div class="aspect-video overflow-hidden rounded-md">
+      <Image
+        src={article.data.cover}
+        alt={article.data.title}
+        width={2070}
+        height={1380}
+        layout="responsive"
+        loading={"eager"}
+      />
+    </div>
+    <div class="flex flex-col gap-2">
+      <div>
+        <h2
+          class="text-xl font-semibold lg:group-hover:underline underline-offset-2"
+        >
+          {article.data.title}
+        </h2>
+        <p class="text-base-content/90 text-base max-w-lg">
+          {article.data.description}
+        </p>
+      </div>
+      <div class="flex items-center text-xs text-base-content/80 mt-2">
+        <span class="text-primary">{category.data.title}</span>
+        <Divider />
+        <span class="flex items-center gap-1">
+          <Time04 size="15" />
+          <span>{getDateDistance(article.data.postedAt)}</span>
+        </span>
+      </div>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,15 @@
+---
+import NewTwitter from "~/assets/svgs/new-twitter.astro";
+
+export interface Props {
+  icon: string | undefined;
+}
+
+const { icon } = Astro.props;
+
+if (!icon) {
+  throw new Error("Icon prop is required");
+}
+---
+
+{icon === "newTwitter" && <NewTwitter />}

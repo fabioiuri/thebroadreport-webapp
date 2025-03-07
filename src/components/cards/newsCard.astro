@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import Divider from "../bases/divider.astro";
+import type { CollectionEntry } from "astro:content";
+import { categoriesHandler } from "~/lib/handlers/categories";
+import { getDateDistance } from "~/lib/utils/date";
+import Time04 from "~/assets/svgs/time-04.astro";
+
+type Props = {
+  article: CollectionEntry<"articles">;
+  index: number;
+};
+
+const { article, index } = Astro.props;
+
+const category = categoriesHandler.oneCategory(article.data.category.id);
+---
+
+<article class="col-span-1 group max-w-sm mx-auto flex">
+  <a href={`/articles/${article.data.slug}`} class="flex flex-col gap-2 h-full">
+    <div class="aspect-video overflow-hidden rounded-md">
+      <Image
+        src={article.data.cover}
+        alt={article.data.title}
+        width={2070}
+        height={1380}
+        loading={index < 3 ? "eager" : "lazy"}
+        layout="responsive"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div class="flex flex-col flex-1">
+      <h3
+        class="text-xl font-serif font-semibold lg:group-hover:underline line-clamp-2"
+      >
+        {article.data.title}
+      </h3>
+      <p
+        class="text-sm text-base-content/80 line-clamp-3 text-pretty lg:mb-auto"
+      >
+        {article.data.description}
+      </p>
+      <div class="flex items-center text-xs text-base-content/80 mt-2">
+        <span class="text-xs text-primary/80">{category.data.title}</span>
+        <Divider />
+        <span class="flex items-center gap-1">
+          <Time04 size="15" />
+          <span>{getDateDistance(article.data.postedAt)}</span>
+        </span>
+      </div>
+    </div>
+  </a>
+</article>
