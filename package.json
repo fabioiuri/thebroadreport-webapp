@@ -1,5 +1,5 @@
 {
-  "name": "astro-news",
+  "name": "the-broad-report",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
-    "daisyui": "^4.12.14"
+    "daisyui": "^4.12.14",
+    "wrangler": "^3.114.0"
   }
 }
