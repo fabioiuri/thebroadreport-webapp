@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @font-face {
-    font-family: 'Adobe Arabic Regular';
-    src: url('Adobe Arabic Regular.ttf');
-  }
+@font-face {
+  font-family: 'Adobe Arabic Regular';
+  src: url('/Adobe Arabic Regular.ttf');
+}
 
+@layer base {
   :root {
     --font-sans: "Times New Roman";
     --font-serif: "Adobe Arabic Regular";
