@@ -1,6 +1,6 @@
 import { type CollectionEntry } from "astro:content";
 import { SITE } from "../config";
-//import defaultImage from "~/assets/images/default-image.jpg";
+import defaultImage from "~/assets/images/logo.png";
 import type { ArticleMeta, Meta } from "../types";
 import { capitalizeFirstLetter } from "./letter";
 
@@ -38,7 +38,7 @@ export const getMeta = async (
         title: title,
         metaTitle: capitalizeFirstLetter(collection.data.title),
         description: collection.data.description,
-        ogImage: "",//defaultImage.src,
+        ogImage: defaultImage.src,
         ogImageAlt: SITE.title,
         type: "website",
       };
