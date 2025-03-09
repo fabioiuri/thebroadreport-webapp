@@ -13,11 +13,14 @@
     --font-serif: "Adobe Arabic Regular";
 
     cursor: default;
-    background-color: #e5e3d138;
   }
 
   html {
     @apply h-full text-[16px];
+  }
+
+  html[data-theme="light"] {
+    background-color: #e5e3d138;
   }
 
   @media (min-width: 1024px) {
