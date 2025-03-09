@@ -18,7 +18,7 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
 
 <article class="col-span-1 group max-w-sm mx-auto flex">
   <a href={`/articles/${article.data.slug}`} class="flex flex-col gap-2 h-full">
-    <div class="aspect-video overflow-hidden rounded-md">
+    <div class="aspect-video overflow-hidden">
       <Image
         src={article.data.cover}
         alt={article.data.title}
@@ -41,7 +41,7 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
         {article.data.description}
       </p>
       <div class="flex items-center text-xs text-base-content/80 mt-2">
-        <span class="text-xs text-primary/80">{category.data.title}</span>
+        <span class="text-xs text-primary">{category.data.title}</span>
         <Divider />
         <span class="flex items-center gap-1">
           <Time04 size="15" />

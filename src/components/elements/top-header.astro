@@ -9,11 +9,11 @@ import ThemeController from "../bases/theme-controller.astro";
   <div class="navbar-start lg:w-1/2">
     <MenuDropdown />
     <img class="lg:hidden" src="/logo.png"/ style="width: 2rem;">
-    <a class="text-xl px-2 text-nowrap lg:hidden" href="/">{SITE.title}</a>
+    <a class="text-xl px-2 text-nowrap lg:hidden" href="/" style="font-weight: bold;">{SITE.title}</a>
   </div>
   <div class="navbar-center hidden lg:flex">
     <img src="/logo.png"/ style="width: 2.5rem;">
-    <a class="text-2xl px-2" href="/">{SITE.title}</a>
+    <a class="text-2xl px-2" href="/" style="font-weight: bold;">{SITE.title}</a>
   </div>
   <div class="navbar-end">
     <ThemeController />

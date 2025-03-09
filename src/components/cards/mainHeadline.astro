@@ -20,7 +20,7 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
     href={`/articles/${article.data.slug}`}
     class="flex flex-col-reverse md:flex-col gap-4"
   >
-    <div class="aspect-video overflow-hidden rounded-md">
+    <div class="aspect-video overflow-hidden">
       <Image
         src={article.data.cover}
         alt={article.data.title}
