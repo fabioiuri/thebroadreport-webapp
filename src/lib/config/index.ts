@@ -15,31 +15,31 @@ export const SITE = {
 export const NAVIGATION_LINKS: Link[] = [
   {
     href: "/categories/politics",
-    text: "Politics",
+    text: "Política",
   },
   {
     href: "/categories/sports",
-    text: "Sports",
+    text: "Desporto",
   },
   {
     href: "/categories/business",
-    text: "Business",
+    text: "Negócios",
   },
   {
     href: "/categories/arts",
-    text: "Arts",
+    text: "Arte",
   },
   {
     href: "/categories/science",
-    text: "Science",
+    text: "Ciência",
   },
   {
     href: "/categories/culture",
-    text: "Culture",
+    text: "Cultura",
   },
   {
     href: "/categories/entertainment",
-    text: "Entertainment",
+    text: "Entretenimento",
   },
   {
     href: "/categories/crime",
@@ -47,7 +47,7 @@ export const NAVIGATION_LINKS: Link[] = [
   },
   {
     href: "/categories/other",
-    text: "Other",
+    text: "Outros",
   }
 ];
 

@@ -3,12 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: 'Adobe Arabic Regular';
+    src: url('Adobe Arabic Regular.ttf');
+  }
+
   :root {
-    --font-sans: "Source Sans Pro";
-    --font-serif: "Source Serif 4 Variable";
+    --font-sans: "Times New Roman";
+    --font-serif: "Adobe Arabic Regular";
 
     cursor: default;
+    background-color: #e5e3d138;
   }
+
   html {
     @apply h-full text-[16px];
   }
@@ -24,8 +31,11 @@
   }
 
   h1,
-  h2 {
+  h2,
+  h3,
+  h4 {
     @apply font-serif;
+    line-height: 1;
   }
 
   small,
@@ -34,6 +44,8 @@
   }
 
   .prose {
+    max-width: 85ch !important;
+
     pre {
       code {
         span,

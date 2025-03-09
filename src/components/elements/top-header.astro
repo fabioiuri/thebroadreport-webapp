@@ -8,10 +8,12 @@ import ThemeController from "../bases/theme-controller.astro";
 <div class="navbar bg-base-100 border-b">
   <div class="navbar-start lg:w-1/2">
     <MenuDropdown />
+    <img class="lg:hidden" src="/logo.png"/ style="width: 2rem;">
     <a class="text-xl px-2 text-nowrap lg:hidden" href="/">{SITE.title}</a>
   </div>
   <div class="navbar-center hidden lg:flex">
-    <a class="text-xl px-2" href="/">{SITE.title}</a>
+    <img src="/logo.png"/ style="width: 2.5rem;">
+    <a class="text-2xl px-2" href="/">{SITE.title}</a>
   </div>
   <div class="navbar-end">
     <ThemeController />
