@@ -25,14 +25,8 @@ export const articleSchema = () => z.object({
       sourceId: z.string(),
       title: z.string(),
       country: z.string(),
-      category: z.string(),
       content: z.string(),
       createdAt: z.string().datetime(),
-      factAnalysis: z.string(),
-      factScore: z.number(),
-      biasAnalysis: z.string(),
-      biasScore: z.number(),
-      summary: z.string(),
       postedAt: z.string().datetime(),
     })
   )
