@@ -74,6 +74,10 @@
   html[data-theme="light"] .text-primary {
     color: #000 !important;
   }
+
+  html[data-theme="dark"] .text-primary {
+    color: #969caa !important;
+  }
 }
 
 @layer components {

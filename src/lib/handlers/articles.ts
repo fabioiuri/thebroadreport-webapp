@@ -2,7 +2,7 @@ import { getCollection } from "astro:content";
 
 const articlesCollection = (
   await getCollection("articles", ({ data }) => {
-    return new Date(data.postedAt) < new Date();
+    return new Date(data.postedAt);
   })
 ).sort((a, b) => b.data.postedAt.localeCompare(a.data.postedAt));
 

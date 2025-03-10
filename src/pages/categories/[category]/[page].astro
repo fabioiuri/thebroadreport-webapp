@@ -27,7 +27,11 @@ const { page } = Astro.props;
 const params = Astro.params;
 const articles = page.data;
 const pathname = new URL(Astro.request.url).pathname.split("/");
-const firstPath = pathname[1];
+let firstPath = pathname[1];
+
+if (pathname[2] != null) {
+  firstPath += "/" + pathname[2];
+}
 
 const entry = await getEntry("views", "categories");
 
@@ -50,7 +54,7 @@ if (!entry) {
     }
   </ul>
   {
-    articles.length > SITE.postsPerPage ? (
+    page.lastPage > 1 ? (
       <PaginationOne
         length={page.lastPage}
         currentUrl={page.url.current}
