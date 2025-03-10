@@ -3,6 +3,7 @@ import BaseLayout from "~/layouts/base.astro";
 import { getEntry } from "astro:content";
 import Headlines from "./_home/headlines.astro";
 import LatestNews from "./_home/latestNews.astro";
+import CategoryLatestNews from "./_home/categoryLatestNews.astro";
 
 const entry = await getEntry("views", "home");
 
@@ -13,5 +14,33 @@ if (!entry) {
 
 <BaseLayout entry={entry}>
   <Headlines />
+  <br/>
+  <hr/>
   <LatestNews />
+  <br/>
+  <hr/>
+  <CategoryLatestNews categoryId="politics"/>
+  <br/>
+  <hr/>
+  <CategoryLatestNews categoryId="business"/>
+  <br/>
+  <hr/>
+  <CategoryLatestNews categoryId="science"/>
+  <br/>
+  <hr/>
+  <CategoryLatestNews categoryId="sports"/>
+  <br/>
+  <hr/>
+  <CategoryLatestNews categoryId="culture"/>
+  <br/>
+  <hr/>
+  <CategoryLatestNews categoryId="entertainment"/>
+  <br/>
+  <hr/>
+  <CategoryLatestNews categoryId="arts"/>
+  <br/>
+  <hr/>
+  <CategoryLatestNews categoryId="crime"/>
+  <br/>
+  <hr/>
 </BaseLayout>
