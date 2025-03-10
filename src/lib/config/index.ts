@@ -80,7 +80,7 @@ export const OTHER_LINKS: Link[] = [
 
 export const SOCIAL_LINKS: Link[] = [
   {
-    href: "https://twitter.com",
+    href: "https://x.com/thebroadrep",
     text: "Twitter",
     icon: "newTwitter",
   },
