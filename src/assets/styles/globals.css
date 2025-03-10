@@ -78,6 +78,48 @@
   html[data-theme="dark"] .text-primary {
     color: #969caa !important;
   }
+
+  .article-summary-container {
+    padding: 30px;
+    padding-top: 20px;
+    border-radius: 15px;
+  }
+
+  html[data-theme="light"] .article-summary-container {
+    background: #f3f2ed;
+  }
+
+  html[data-theme="dark"] .article-summary-container {
+    background: #161a1f;
+  }
+
+  .article-summary-title {
+    @apply font-serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: 0px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .article-summary {
+    font-size: 1.1rem;
+  }
+
+  html[data-theme="light"] .article-summary {
+    color: #6a6a6a;
+  }
+
+  article hr {
+    margin-top: 1.5em !important;
+    margin-bottom: 1.5em !important;
+  }
+
+  @media (min-width: 750px) {
+    article {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
 }
 
 @layer components {

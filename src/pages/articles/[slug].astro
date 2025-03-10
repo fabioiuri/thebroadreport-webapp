@@ -21,8 +21,11 @@ const { article } = Astro.props;
     article={article}
   />
   <ContentLayout>
-    <div set:html={article.data.summary.replace("\n", "<br>")}></div>
+    <div class="article-summary-container">
+      <p class="article-summary-title">Resumo</p>
+      <div class="article-summary" set:html={article.data.summary.replaceAll("\n", "<br>")}></div>
+    </div>
     <hr/>
-    <div set:html={article.data.content.replace("\n", "<br>")}></div>
+    <div class="article-content" set:html={article.data.content.replaceAll("\n", "<br>")}></div>
   </ContentLayout>
 </BaseLayout>
