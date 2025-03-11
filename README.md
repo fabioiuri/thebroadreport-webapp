@@ -35,3 +35,7 @@ npm run build
 - [x] RSS Feed
 - [x] Sitemap
 - [x] Search
+
+## TODOs
+
+- Display navbar when user scrolls to top
