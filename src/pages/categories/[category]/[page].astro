@@ -8,6 +8,7 @@ import ListLayout from "~/layouts/list.astro";
 import PaginationOne from "~/components/shared/pagination-one.astro";
 import WideCard from "~/components/cards/wideCard.astro";
 import { getEntry } from "astro:content";
+
 export const getStaticPaths = (async ({ paginate }) => {
   const allCategories = categoriesHandler.allCategories();
   const allArticles = articlesHandler.allArticles();
@@ -18,13 +19,13 @@ export const getStaticPaths = (async ({ paginate }) => {
     );
     return paginate(filteredArticles, {
       params: { category: category.id },
+      props: { category },
       pageSize: SITE.postsPerPage,
     });
   });
 }) satisfies GetStaticPaths;
 
-const { page } = Astro.props;
-const params = Astro.params;
+const { page, category } = Astro.props;
 const articles = page.data;
 const pathname = new URL(Astro.request.url).pathname.split("/");
 let firstPath = pathname[1];
@@ -40,7 +41,7 @@ if (!entry) {
 }
 ---
 
-<ListLayout header={params.category} entry={entry}>
+<ListLayout header={category.data.title} entry={entry}>
   <ul class="flex flex-col gap-2 flex-1">
     {
       articles.map((article) => (
