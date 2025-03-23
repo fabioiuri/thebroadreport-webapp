@@ -1,10 +1,10 @@
 import type { Link } from "../types";
 
 export const SITE = {
-  title: "The Broad Report",
-  description: "A news website built with an augmented knowledge base that reports and analyzes current events",
+  title: "O Abrangente",
+  description: "Um portal de notícias desenvolvido com uma base de conhecimento ampliada, dedicado à cobertura e análise de eventos atuais.",
   author: "Fatigations Corp.",
-  url: "https://thebroadreport.com",
+  url: "https://oabrangente.pt",
   locale: "en-US",
   dir: "ltr",
   charset: "UTF-8",

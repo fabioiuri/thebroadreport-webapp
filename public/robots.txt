@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thebroadreport.com/sitemap-index.xml
+Sitemap: https://oabrangente.pt/sitemap-index.xml
