@@ -18,6 +18,7 @@ export const articleSchema = () => z.object({
   postedAt: z.string().datetime(),
   tags: z.array(z.string()),
   cover: z.string(),
+  coverRights: z.string().nullable(),
   subArticles: z.array(
     z.object({
       id: z.string(),

@@ -17,25 +17,9 @@ const { article } = Astro.props;
 
 const category = categoriesHandler.oneCategory(article.data.category.id);
 ---
-
 <section
-  class="article-header flex flex-col lg:flex-col-reverse items-center justify-center border-b lg:border-none pb-2 pt-0 lg:pt-6"
+  class="article-header flex flex-col lg:flex-col items-center justify-center border-b lg:border-none pt-0 lg:pt-6"
 >
-  <div
-    class="container px-0 lg:px-4 max-w-5xl aspect-[20/9] lg:mt-4 overflow-hidden"
-  >
-    <Picture
-      src={article.data.cover}
-      width={2070}
-      height={1380}
-      alt="article"
-      layout="full-width"
-      decoding={"async"}
-      loading={"lazy"}
-      formats={["avif", "webp"]}
-      class="w-full h-full object-cover"
-    />
-  </div>
   <div class="container my-4 lg:hidden flex items-center gap-2">
     <ResourcesAdd size="16" />
     <a href={`/categories/${category.data.slug}`} class="a-01 font-semibold"
@@ -77,4 +61,22 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
       </div>
     </div>
   </div>
+  <div
+    class="container px-0 lg:px-4 max-w-5xl aspect-[20/9] mt-2 lg:mt-4 overflow-hidden"
+  >
+    <Picture
+      src={article.data.cover}
+      width={2070}
+      height={1380}
+      alt={article.data.title}
+      layout="full-width"
+      decoding={"async"}
+      loading={"lazy"}
+      formats={["avif", "webp"]}
+      class="w-full h-full object-cover"
+    />
+  </div>
+  {article.data.coverRights != null && 
+    <p class="px-0 lg:px-4 mt-1 lg:mt-2 pb-2 lg:pb-0 text-sm">{article.data.coverRights}</p>
+  }
 </section>
