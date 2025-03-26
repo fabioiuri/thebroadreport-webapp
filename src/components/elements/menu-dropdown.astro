@@ -22,7 +22,7 @@ import { NAVIGATION_LINKS, OTHER_LINKS } from "~/lib/config";
 
     <li>
       <details>
-        <summary>Categories</summary>
+        <summary>Categorias</summary>
         <ul>
           {
             NAVIGATION_LINKS.map(({ href, text, target }) => (
@@ -37,21 +37,14 @@ import { NAVIGATION_LINKS, OTHER_LINKS } from "~/lib/config";
       </details>
     </li>
 
-    <li>
-      <details>
-        <summary>Other Pages</summary>
-        <ul>
-          {
-            OTHER_LINKS.map(({ href, text, target }) => (
-              <li>
-                <a href={href} target={target ?? "_self"} aria-label={text}>
-                  {text}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </details>
-    </li>
+    {
+      OTHER_LINKS.map(({ href, text, target }) => (
+        <li>
+          <a href={href} target={target ?? "_self"} aria-label={text}>
+            {text}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </div>

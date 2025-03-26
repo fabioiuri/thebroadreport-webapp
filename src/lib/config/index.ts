@@ -42,19 +42,19 @@ export const NAVIGATION_LINKS: Link[] = [
 export const OTHER_LINKS: Link[] = [
   {
     href: "/contact",
-    text: "Contact",
+    text: "Contactos",
   },
   {
     href: "/privacy",
-    text: "Privacy",
+    text: "Privacidade",
   },
   {
     href: "/terms",
-    text: "Terms",
+    text: "Termos e Condições",
   },
   {
     href: "/cookie-policy",
-    text: "Cookie Policy",
+    text: "Cookies",
   },
   {
     href: "/rss.xml",
@@ -62,7 +62,7 @@ export const OTHER_LINKS: Link[] = [
   },
   {
     href: "/sitemap-index.xml",
-    text: "Sitemap",
+    text: "Mapa do Site",
   },
 ];
 
