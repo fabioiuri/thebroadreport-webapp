@@ -3,6 +3,41 @@ import TopHeader from "../elements/top-header.astro";
 import Navbar from "../elements/navbar.astro";
 ---
 
+<script>
+  let lastScrollY: number | null = null;
+  let header: HTMLElement | null = null;
+
+  setInterval(function() {
+    lastScrollY = window.scrollY;
+    header = document.querySelector("header");
+  }, 1000);
+
+  window.addEventListener("scroll", () => {
+    const popoverMenu = document.querySelector(".dropdown ul");
+
+    if (window.innerWidth >= 1025) {
+      // web only
+      if (window.scrollY < 600) {
+        // Always show the header within the first 600px
+        header?.classList.remove("scroll-hidden");
+        if (popoverMenu != null) popoverMenu.classList.remove("invisible");
+      } else {
+        if (lastScrollY != null && window.scrollY > lastScrollY) {
+          // Scrolling down beyond 600px, hide the header if on web version
+          header?.classList.add("scroll-hidden");
+          if (popoverMenu != null) popoverMenu.classList.add("invisible");
+        } else if (lastScrollY != null && window.scrollY + 20 < lastScrollY) {
+          // Scrolling up after a threshold of 300px, show the header again
+          header?.classList.remove("scroll-hidden");
+          if (popoverMenu != null) popoverMenu.classList.remove("invisible");
+        }
+      }
+    }
+
+    lastScrollY = window.scrollY;
+  });
+</script>
+
 <header class="border-b">
   <TopHeader />
   <Navbar />

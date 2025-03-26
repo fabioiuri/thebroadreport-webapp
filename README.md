@@ -46,5 +46,3 @@ npm run build-deploy
 - [x] Search
 
 ## TODOs
-
-- Display navbar when user scrolls to top
