@@ -18,32 +18,20 @@ export const NAVIGATION_LINKS: Link[] = [
     text: "Política",
   },
   {
-    href: "/categories/sports",
-    text: "Desporto",
+    href: "/categories/economics",
+    text: "Economia",
   },
   {
     href: "/categories/business",
     text: "Negócios",
   },
   {
-    href: "/categories/arts",
-    text: "Arte",
-  },
-  {
     href: "/categories/science",
     text: "Ciência",
   },
   {
-    href: "/categories/culture",
-    text: "Cultura",
-  },
-  {
-    href: "/categories/entertainment",
-    text: "Entretenimento",
-  },
-  {
-    href: "/categories/crime",
-    text: "Crime",
+    href: "/categories/sports",
+    text: "Desporto",
   },
   {
     href: "/categories/other",

@@ -12,20 +12,21 @@ const { categoryId } = Astro.props;
 
 const articles = articlesHandler.categoryLatest(categoryId);
 const category = categoriesHandler.allCategories().filter(c => c.id == categoryId)[0];
-
 ---
 
-<section class="container pb-0 space-y-4" style="padding-top: 1.5rem;" data-pagefind-ignore="all">
-  <HeaderSection
-    title=`${category.data.title}`
-    link_title="Ver Todos"
-    link_url=`/categories/${categoryId}`
-  />
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-6 md:grid-rows-1">
-    {
-      articles
-        .map((article, index) => <NewsCard article={article} index={index} />)
-    }
-  </div>
-  <br/>
-</section>
+{category != null && 
+  <section class="container pb-0 space-y-4" style="padding-top: 1.5rem;" data-pagefind-ignore="all">
+    <HeaderSection
+      title=`Últimas: ${category.data.title}`
+      link_title="Ver Todos"
+      link_url=`/categories/${categoryId}`
+    />
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-6 md:grid-rows-1">
+      {
+        articles
+          .map((article, index) => <NewsCard article={article} index={index} />)
+      }
+    </div>
+    <br/>
+  </section>
+}
