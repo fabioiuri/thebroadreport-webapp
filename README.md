@@ -48,4 +48,3 @@ npm run build-deploy
 ## TODOs
 
 - Show 4 articles in each row instead of 3
-- Display article image first on mobile home page highlighted article
