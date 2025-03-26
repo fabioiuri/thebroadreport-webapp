@@ -24,6 +24,15 @@ npm run dev
 npm run build
 ```
 
+### Build and Deploy
+
+Requires to setup a `.env` file with the contents from the `.env.sample` file, but with the secret values filled in, 
+including a Cloudflare token with permissions to read and write cloudflare pages.
+
+```bash
+npm run build-deploy
+```
+
 ## ✨ Features
 
 - [ ] Sharing
