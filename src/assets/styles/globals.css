@@ -23,6 +23,10 @@
     background-color: #e5e3d138;
   }
 
+  * {
+    border-color: #424c585e;
+  }
+
   @media (min-width: 1024px) {
     html {
       @apply text-[17px];
@@ -142,11 +146,11 @@
   }
 
   html[data-theme="dark"] header {
-    background: #21252a !important;
+    background: #181c1f !important;
   }
 
   html[data-theme="dark"] header .navbar {
-    background: #21252a !important;
+    background: #181c1f !important;
   }
 
   body main {
