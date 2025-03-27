@@ -47,4 +47,4 @@ npm run build-deploy
 
 ## TODOs
 
-- Show 4 articles in each row instead of 3
+- reduce bytesize of imgs

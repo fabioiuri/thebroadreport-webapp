@@ -31,7 +31,38 @@ if (!entry) {
   <CategoryLatestNews categoryId="sports"/>
   <br/>
   <hr/>
-  <LatestNews />
+  <LatestNews excludeLatestFromCategoryIds={["politics", "economics", "business", "science", "sports"]} initialLimit={4 * 5} limit={4 * 30}/>
   <br/>
   <hr/>
 </BaseLayout>
+
+<script>
+  let isLoading = false;
+
+  const fetchMoreArticles = async () => {
+    if (isLoading) return;
+
+    isLoading = true;
+
+    Array.from(document.querySelectorAll('article.hidden')).slice(0, 4).forEach(articleElement => {
+      articleElement.classList.remove("hidden");
+    });
+
+    isLoading = false;
+  };
+
+  const handleScroll = () => {
+    if (isLoading) return;
+
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const clientHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+
+    if (scrollTop + clientHeight >= scrollHeight - 400) {
+      fetchMoreArticles();
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+</script>

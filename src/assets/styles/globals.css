@@ -170,6 +170,10 @@
   .invisible {
     opacity: 0 !important;
   }
+
+  .hidden {
+    display: none;
+  }
 }
 
 @layer components {

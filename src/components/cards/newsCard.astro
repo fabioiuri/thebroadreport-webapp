@@ -9,14 +9,15 @@ import Time04 from "~/assets/svgs/time-04.astro";
 type Props = {
   article: CollectionEntry<"articles">;
   index: number;
+  visible?: boolean | undefined;
 };
 
-const { article, index } = Astro.props;
+const { article, index, visible } = Astro.props;
 
 const category = categoriesHandler.oneCategory(article.data.category.id);
 ---
 
-<article class="col-span-1 group max-w-sm mx-auto flex">
+<article class={"col-span-1 group max-w-sm mx-auto flex " + (visible == false ? "hidden" : "")}>
   <a href={`/articles/${article.data.slug}`} class="flex flex-col gap-2 h-full">
     <div class="aspect-video overflow-hidden">
       <Image

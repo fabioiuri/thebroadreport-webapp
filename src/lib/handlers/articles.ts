@@ -35,12 +35,16 @@ export const articlesHandler = {
     return subHeadlines;
   },
 
-  latest: () => {
+  otherLatest: (excludeLatestFromCategoryIds: string[], limit: number) => {
     const mainHeadline = articlesHandler.mainHeadline();
     const subHeadlines = articlesHandler.subHeadlines();
-    const allHeadlinesIds = [mainHeadline, ...subHeadlines].map(a => a.id);
+    const allExcludedIds = [mainHeadline, ...subHeadlines].map(a => a.id);
 
-    return articlesCollection.filter(a => allHeadlinesIds.indexOf(a.id) === -1).slice(0, 9);
+    for (const categoryId of excludeLatestFromCategoryIds) {
+      allExcludedIds.push(...articlesHandler.categoryLatest(categoryId).map(a => a.id));
+    };
+
+    return articlesCollection.filter(a => allExcludedIds.indexOf(a.id) === -1).slice(0, limit);
   },
 
   categoryLatest: (categoryId: string) => {
@@ -51,6 +55,6 @@ export const articlesHandler = {
     return articlesCollection
       .filter(a => allHeadlinesIds.indexOf(a.id) === -1)
       .filter(a => a.data.category.id == categoryId)
-      .slice(0, 3);
+      .slice(0, 4);
   }
 };

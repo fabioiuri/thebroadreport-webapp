@@ -3,7 +3,14 @@ import NewsCard from "~/components/cards/newsCard.astro";
 import HeaderSection from "./headerSection.astro";
 import { articlesHandler } from "~/lib/handlers/articles";
 
-const articles = articlesHandler.latest();
+type Props = {
+  excludeLatestFromCategoryIds: string[];
+  initialLimit: number;
+  limit: number;
+};
+
+const { excludeLatestFromCategoryIds, limit, initialLimit } = Astro.props;
+const articles = articlesHandler.otherLatest(excludeLatestFromCategoryIds, limit);
 ---
 
 <section class="container pb-0 space-y-4" style="padding-top: 1.5rem;" data-pagefind-ignore="all">
@@ -12,10 +19,10 @@ const articles = articlesHandler.latest();
     link_title="Ver Todos"
     link_url="/articles"
   />
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-6 md:grid-rows-2">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 gap-y-6 md:grid-rows-2">
     {
       articles
-        .map((article, index) => <NewsCard article={article} index={index} />)
+        .map((article, index) => <NewsCard article={article} index={index} visible={index + 1 <= initialLimit} />)
     }
   </div>
   <br/>
