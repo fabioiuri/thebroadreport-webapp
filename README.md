@@ -47,4 +47,4 @@ npm run build-deploy
 
 ## TODOs
 
-- reduce bytesize of imgs
+Nothin.
