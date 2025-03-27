@@ -5,6 +5,7 @@
 @font-face {
   font-family: 'Adobe Arabic Regular';
   src: url('/Adobe Arabic Regular.ttf');
+  font-display: swap;
 }
 
 @layer base {
