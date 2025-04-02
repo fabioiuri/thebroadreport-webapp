@@ -4,7 +4,12 @@ const articlesCollection = (
   await getCollection("articles", ({ data }) => {
     return new Date(data.postedAt);
   })
-).sort((a, b) => b.data.postedAt.localeCompare(a.data.postedAt));
+).sort((a, b) => {
+  if (a.data.rank == b.data.rank)
+    return b.data.postedAt.localeCompare(a.data.postedAt)
+  else
+    return b.data.rank - a.data.rank;
+});
 
 export const articlesHandler = {
   allArticles: () => articlesCollection,
@@ -25,7 +30,7 @@ export const articlesHandler = {
         (article) =>
           mainHeadline.id !== article.id
       )
-      .filter(a => ['science', 'business', 'politics'].indexOf(a.data.category.id) >= 0)
+      .filter(a => ['science', 'economics', 'business', 'politics'].indexOf(a.data.category.id) >= 0)
       .slice(0, 4);
 
     if (subHeadlines.length === 0)
