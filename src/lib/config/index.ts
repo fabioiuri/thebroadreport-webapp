@@ -1,10 +1,10 @@
 import type { Link } from "../types";
 
 export const SITE = {
-  title: "O Abrangente",
+  title: "O Arquivo",
   description: "Um portal de notícias desenvolvido com uma base de conhecimento ampliada, dedicado à cobertura e análise de eventos atuais.",
   author: "Fatigations Corp.",
-  url: "https://oabrangente.pt",
+  url: "https://oarquivo.pt",
   locale: "en-US",
   dir: "ltr",
   charset: "UTF-8",

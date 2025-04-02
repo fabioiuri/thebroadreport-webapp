@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oabrangente.pt/sitemap-index.xml
+Sitemap: https://oarquivo.pt/sitemap-index.xml
