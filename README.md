@@ -47,4 +47,6 @@ npm run build-deploy
 
 ## TODOs
 
-Nothin.
+- improve category page
+  - increase page size
+  - increase #articles per row
